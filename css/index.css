@@ -1,0 +1,83 @@
+html {
+    text-align: center;
+    font-family: 'Noto Sans JP', sans-serif;
+    color: white;
+}
+
+h1 {
+    font-size: 50px;
+}
+
+h2 {
+    font-size: 40px;
+    padding: 50px;
+    color: rgb(14, 14, 41);
+}
+
+#home {
+    background-image: url('../media/background.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    -moz-background-size: cover;  /* Firefox 3.6 */
+    background-position: center;  /* Internet Explorer 7/8 */
+    height: 100%;
+    padding: 10%;
+}
+
+#skills {
+  font-size: 50px; 
+  opacity: 0%;
+  display: inline-block;
+  position: relative;
+}
+
+#menu {
+    display: flex;
+    background-color: rgb(14, 14, 41);
+    padding: 10px 100px 10px;
+}
+
+.nav {
+    font-size: 25px;
+    color: white;
+    padding: 0px 25px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.nav:hover {
+    color: #40aa5e;
+}
+
+.projimg {
+    width: 10%;
+    transition: 1s;
+}
+
+.projimg:hover {
+    opacity: 50%;
+    width: 15%;
+}
+
+.active {
+    color: #40aa5e;
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+#projectlist {
+    height: 5000px;
+}
+
+.sticky + .content {
+    padding-top: 75px;
+}
+
+.header {
+    display: flex;
+}
