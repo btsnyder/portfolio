@@ -18,7 +18,7 @@
         </div>
         <div id="home">
             <h1>Full Stack Developer based in Nampa, ID</h1>
-            <p id="skills">C#</p>
+            <p id="skills_p">C#</p>
         </div>
         <div id="menu">
             <div onclick="location.href='#home';" class="nav active" id="homenav">HOME</div>
@@ -30,10 +30,100 @@
                 <h2>Projects<div class="line"></div></h2>
                 <div id="projectlist">
                     <div class="project" id="wood">
-                        <p id="woodp" style="opacity: 0%; font-size: 40px;">Lumber Mill Application</p>
+                        <p class="project_lbl" id="wood_lbl">Lumber Mill Application</p>
                     </div>
-                    <div class="project" id="saw"></div>
+                    <div class="project" id="saw">
+                        <p class="project_lbl" id="saw_lbl">Saw Vision</p>
+                    </div>
+                    <div class="project" id="toolbox">
+                        <p class="project_lbl" id="toolbox_lbl">Lease Toolbox</p>
+                    </div>
                 </div>
+            </div>
+            <div id="wood_descpt" class="project_descpt">
+                <div class="resp">
+                    <p class="resp_title">Responsibilities</p>
+                    <ul class="resp_list">
+                        <li>C#</li>
+                        <li>Python</li>
+                        <li>NoSQL (Couchbase)</li>
+                        <li>Google Cloud Platform</li>
+                        <li>Xamarin</li>
+                        <li>UWP</li>
+                        <li>Auth0</li>
+                        <li>REST</li>
+                        <li>.NET Framework</li>
+                        <li>Jira</li>
+                        <li>GitHub</li>
+                    </ul>
+                </div>
+                <div class="descpt">
+                    <p>
+                        Our company was responsible for creating a Windows application that would create and manage data related to log scaling. 
+                        This required one application to be used for data entry of log information and another application to be used for managing 
+                        the contracts and locations of the truckloads of those logs.
+                    </p>
+                    <h3>Entering the Data</h3>
+                    <p>
+                        The methodology of scaling a log is a complicated process, but essentially log scalers enter information about the log, 
+                        like length and diameter. This information is then used to determine how much of the log can be used. It was our job to create 
+                        an application that could calculate this data in real time and store it in an efficient manner. We deployed this as a Universal 
+                        Windows Platform application so that it would be accessible with the hardware they would need. I was responsible for building the 
+                        UI for this application, debugging any issues, developing feature requests, and increasing performance. Since this was being used 
+                        in a production environment, it was critical that I understood the issues users were experiencing and provide a timely solution.
+                    </p>
+                    <h3>Storing the Data</h3>
+                    <p>
+                        Since the information needed for log scaling can change drastically, we stored the data in a NoSQL database through Couchbase. 
+                        This would allow us to update schemas as needed while still handling large volumes of data. I was tasked with building, deploying, 
+                        and maintaining the database. Project owners would often have questions about data and it was my role to create the queries needed 
+                        to provide the answer. Queries were also required for any changes to our data model that required updates to historical data, which 
+                        I was responsible for writing. 
+                    </p>
+                    <h3>Accessing the Data</h3>
+                    <p>
+                        Due to the nature of the production environment, we had to allow for offline entry of data that could then be synced later on. While 
+                        Couchbase offers their Sync Gateway to handle this, we still had to implement our own merge strategies for data integrity. I took the 
+                        steps necessary to to deploy the Sync Gateway and make it available to all users. I did this through the Google Cloud Platform. To 
+                        keep the application secure, I integrated the Sync Gateway with Auth0. I diagnosed and worked through any issues that arose in our 
+                        syncing process.
+                    </p>
+                    <h3>Organizing the Data</h3>
+                    <p>
+                        The information of the logs needed to be organized under different contracts, which required a separate application. This was built in 
+                        Xamarin Forms to allow for the most flexibility in our deployment environment. Similar to the log entry application, I was responsible 
+                        for building the UI for this application, debugging any issues, developing feature requests, and increasing performance. To track the 
+                        bugs and feature requests, I initiated our use of Jira to manage communication between the clients.
+                    </p>
+                    <h3>Testing the Data</h3>
+                    <p>
+                        The rules of log scaling have existed for quite some time. To ensure that our program followed those same standards, the auditing 
+                        process for these applications had to be robust. I created and reported on unit tests involved with our calculations for log scaling 
+                        and for our own applications stability. 
+                    </p>
+                </div>
+            </div>
+            <div id="saw_descpt" class="project_descpt">
+                <div class="resp">
+                    <p class="resp_title">Responsibilities</p>
+                    <ul class="resp_list">
+                        <li>C#</li>
+                        <li>Python</li>
+                        <li>NoSQL (Couchbase)</li>
+                        <li>Google Cloud Platform</li>
+                        <li>Xamarin</li>
+                        <li>UWP</li>
+                        <li>GitHub</li>
+                    </ul>
+                </div>
+                <div class="descpt">
+                    <p>asdfawerawerqwerqewrqwerqwer
+                    </p>
+                </div>
+
+            </div>
+            <div id="contact">
+                <h2>Contact<div class="line"></div></h2>
             </div>
         </div>
         <div style="color: black;">Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>

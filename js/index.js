@@ -4,7 +4,7 @@ var skills_copy = JSON.parse(JSON.stringify(skills));
 
 window.onload = async function (){
     var id = null;
-    element = document.getElementById("skills");
+    element = document.getElementById("skills_p");
     
     for (i = 0; i < skills.length; i++) {
         var opacity = 0;
@@ -58,20 +58,33 @@ function myFunction() {
   }
 }
 
+var showing = null;
+
 $(document).ready(function(){
-  var left = false;
-  $("#wood").hover(async function(){
-    left = false;
-    await new Promise(r => setTimeout(r, 500));
-    for (k = 0; k < 100; k++) {
-      if (left) {
-        break;
-      }
-      $("#woodp").css("opacity", k + "%");
-      await new Promise(r => setTimeout(r, 5));
+  
+  $(".project").hover(async function(){
+    var element = document.getElementById(this.id);
+    if (showing != null && element.id != showing)
+    {
+      document.getElementById(showing).classList.remove("projecthover");
+      document.getElementById(showing + "_descpt").classList.remove("shown");
+      document.getElementById(showing + "_lbl").classList.remove("shown");
     }
-    }, function(){
-      left = true;
-      $("#woodp").css("opacity", "0%");
+    showing = element.id;  
+    element.classList.add("projecthover");
+    await new Promise(r => setTimeout(r, 500));
+    if (element.id == showing)
+    {
+      document.getElementById(this.id + "_lbl").classList.add("shown");
+      document.getElementById(this.id + "_descpt").classList.add("shown");
+    }
+    else
+    {
+      element.classList.remove("projecthover");
+    }
   });
 });
+
+function showProject(project) {
+  console.log(project);
+}
