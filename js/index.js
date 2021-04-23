@@ -1,6 +1,9 @@
+var skills = ["C#", "Python", "SQL", "HTML", "NoSQL", "Google Cloud Platform", ".Net Framework", "Auth0", "Couchbase", "Django", "CSS", "Agile Framework", "Jira", 
+              "REST", "Machine Vision", "OpenCV", "Git", "Xamarin", "UWP", "XML"];
+var skills_copy = JSON.parse(JSON.stringify(skills));
+
 window.onload = async function (){
     var id = null;
-    let skills = ["C#", "Python"];
     element = document.getElementById("skills");
     
     for (i = 0; i < skills.length; i++) {
@@ -8,7 +11,10 @@ window.onload = async function (){
         var top = 0;
         element.style.opacity = "0%";
         element.style.top = "0px";
-        element.innerHTML = skills[i];
+
+        var randomIndex = Math.floor(Math.random()*skills_copy.length);
+        element.innerHTML = skills_copy[randomIndex];
+        skills_copy.splice(randomIndex, 1);
         for (j = 0; j < 100; j++) {
             element.style.opacity = j + "%";
             await new Promise(r => setTimeout(r, 5));
@@ -19,8 +25,9 @@ window.onload = async function (){
             element.style.top = -0.5 * (100 - j) + "px";
             await new Promise(r => setTimeout(r, 5));
         }
-        if (i == skills.length - 1) {
+        if (skills_copy.length == 0) {
             i = -1;
+            skills_copy = JSON.parse(JSON.stringify(skills));
         }
     }
 }
@@ -50,3 +57,21 @@ function myFunction() {
     projects.classList.add("active");
   }
 }
+
+$(document).ready(function(){
+  var left = false;
+  $("#wood").hover(async function(){
+    left = false;
+    await new Promise(r => setTimeout(r, 500));
+    for (k = 0; k < 100; k++) {
+      if (left) {
+        break;
+      }
+      $("#woodp").css("opacity", k + "%");
+      await new Promise(r => setTimeout(r, 5));
+    }
+    }, function(){
+      left = true;
+      $("#woodp").css("opacity", "0%");
+  });
+});

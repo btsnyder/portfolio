@@ -10,9 +10,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <body>
         <div class="header">
-            <img src="media/WebsiteLogo.png" style="width: 10%;">
-            <p style="color: black;">Brandon Snyder</p>
-            <p style="color: black">Software Designer</p>
+            <img src="media/WebsiteLogo.png" style="width: 10%; height: 10%; margin-top: auto; margin-bottom: auto;">
+            <div style="display: block; margin-top: auto; margin-bottom: auto;">
+                <p id="name">Brandon Snyder</p>
+                <p id="title">Software Developer</p>
+            </div>
         </div>
         <div id="home">
             <h1>Full Stack Developer based in Nampa, ID</h1>
@@ -25,15 +27,17 @@
         </div>
         <div class="content">
             <div id="projects">
-                <h2>Projects</h1>
-                    <div id="projectlist">
-                        <img src="media/WebsiteLogo.png" class="projimg">
-                        <img src="media/WebsiteLogo.png" class="projimg">
-                        <img src="media/WebsiteLogo.png" class="projimg">
-                        <img src="media/WebsiteLogo.png" class="projimg">
+                <h2>Projects<div class="line"></div></h2>
+                <div id="projectlist">
+                    <div class="project" id="wood">
+                        <p id="woodp" style="opacity: 0%; font-size: 40px;">Lumber Mill Application</p>
                     </div>
+                    <div class="project" id="saw"></div>
+                </div>
             </div>
         </div>
+        <div style="color: black;">Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
     </body>
 </html>
