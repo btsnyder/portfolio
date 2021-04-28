@@ -36,55 +36,87 @@ window.onscroll = function() {myFunction()};
 
 var menu = document.getElementById("menu");
 var home = document.getElementById("homenav");
-var projects = document.getElementById("projectnav");
+var projectnav = document.getElementById("projectnav");
+var projects = document.getElementById("projects");
+var contactnav = document.getElementById("contactnav");
+var contact = document.getElementById("contact")
+var resumenav = document.getElementById("resumenav");
+var resume = document.getElementById("resume")
 
 var sticky = menu.offsetTop;
-var homeoffset = home.offsetTop;
-var projectoffset = projects.offsetTop;
 
 function myFunction() {
-  if (window.pageYOffset > sticky) {
+  if (window.pageYOffset > sticky && window.innerWidth > 1000) {
     menu.classList.add("sticky");
   } else {
     menu.classList.remove("sticky");
   }
-
-  if (window.pageYOffset < projectoffset) {
+  if (window.pageYOffset + window.innerHeight < projects.offsetTop) {
     home.classList.add("active");
-    projects.classList.remove("active");
-  } else if (window.pageYOffset >= projectoffset) {
+    projectnav.classList.remove("active");
+    contactnav.classList.remove("active");
+    resumenav.classList.remove("active");
+  } else if (window.pageYOffset + window.innerHeight >= projectnav.offsetTop && 
+             window.pageYOffset + window.innerHeight < contact.offsetTop) {
     home.classList.remove("active");
-    projects.classList.add("active");
+    projectnav.classList.add("active");
+    contactnav.classList.remove("active");
+    resumenav.classList.remove("active");
+  }
+  else if (window.pageYOffset + window.innerHeight >= contact.offsetTop && 
+    window.pageYOffset + window.innerHeight < resume.offsetTop) {
+    home.classList.remove("active");
+    projectnav.classList.remove("active");
+    contactnav.classList.add("active");
+    resumenav.classList.remove("active");
+  }
+  else {
+    home.classList.remove("active");
+    projectnav.classList.remove("active");
+    contactnav.classList.remove("active");
+    resumenav.classList.add("active");
   }
 }
 
 var showing = null;
 
-$(document).ready(function(){
-  
-  $(".project").hover(async function(){
-    var element = document.getElementById(this.id);
-    if (showing != null && element.id != showing)
-    {
-      document.getElementById(showing).classList.remove("projecthover");
-      document.getElementById(showing + "_descpt").classList.remove("shown");
-      document.getElementById(showing + "_lbl").classList.remove("shown");
-    }
-    showing = element.id;  
-    element.classList.add("projecthover");
-    await new Promise(r => setTimeout(r, 500));
+async function showProject(id){
+  var element = document.getElementById(id);
+  if (showing != null)
+  {
+    document.getElementById(showing).classList.remove("project_show");
+    document.getElementById(showing + "_descpt").classList.remove("shown");
+    document.getElementById(showing + "_lbl").classList.remove("shown");
     if (element.id == showing)
     {
-      document.getElementById(this.id + "_lbl").classList.add("shown");
-      document.getElementById(this.id + "_descpt").classList.add("shown");
+      document.getElementById("contact").style.marginTop = "0px";
+      showing = null;
+      return;
     }
-    else
-    {
-      element.classList.remove("projecthover");
-    }
-  });
-});
+  }
+  showing = element.id;  
+  element.classList.add("project_show");
+  await new Promise(r => setTimeout(r, 500));
+  if (element.id == showing)
+  {
+    document.getElementById(id + "_lbl").classList.add("shown");
+    document.getElementById(id + "_descpt").classList.add("shown");
+    document.getElementById("contact").style.marginTop = (document.getElementById(id + "_descpt").offsetHeight) + "px";
+  }
+  else
+  {
+    element.classList.remove("project_show");
+  }
+}
 
-function showProject(project) {
-  console.log(project);
+function sendMail() {
+  var first = document.getElementById("email_first").value;
+  var last = document.getElementById("email_last").value;
+  var subject = document.getElementById("email_subject").value;
+  var body = document.getElementById("email_body").value;
+  window.open(`mailto:bsnyder@nnu.edu?subject=${subject} - ${first} ${last}&body=${body}`);
+}
+
+function downloadResume() {
+  window.open('https://drive.google.com/uc?export=download&id=1aIVY1gKueoZ0jSqshsnEw9mBbHfNOQ-f')
 }
