@@ -40,10 +40,10 @@ button {
 }
 
 button:hover {
-    background-color: #328148;
+    filter: brightness(75%);
 }
 
-a img:hover {
+a:hover, a:active {
     filter: brightness(75%);
 }
 /*#endregion */
@@ -250,7 +250,6 @@ a img:hover {
     flex: 1;
 }
 
-
 .contactform text {
     text-align: left;
     color: rgb(128, 126, 126)
@@ -273,6 +272,19 @@ a img:hover {
     width: 200px;
     margin: auto;
     margin-top: 25px;
+}
+
+#repolink {
+    background-color: #40aa5e;
+    border-radius: 5px;
+    color: white;
+    font-size: 25px;
+    padding: 10px 20px;
+    text-decoration: none;
+}
+
+#repolink_div {
+    margin: 25px 0px;
 }
 /*#endregion */
 

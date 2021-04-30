@@ -157,7 +157,7 @@ async function showProject(id){
   {
     document.getElementById(id + "_lbl").classList.add("shown");
     document.getElementById(id + "_descpt").classList.add("shown");
-    // adjust contact section, since descriptions are absolute to allow for overlap
+    // adjust bottom sections, since descriptions are absolute to allow for overlap
     document.getElementById("contact").style.marginTop = (document.getElementById(id + "_descpt").offsetHeight) + "px";
   }
   else
