@@ -1,3 +1,4 @@
+/*#region Built-Ins */
 html {
     text-align: center;
     font-family: 'Noto Sans JP', sans-serif;
@@ -45,6 +46,7 @@ button:hover {
 a img:hover {
     filter: brightness(75%);
 }
+/*#endregion */
 
 /*#region Header*/
 #header {
@@ -52,8 +54,8 @@ a img:hover {
 }
 
 #header img {
-    width: 10%; 
-    height: 10%; 
+    width: 100px; 
+    height: 100px; 
     margin-top: auto; 
     margin-bottom: auto;
 }
@@ -71,14 +73,13 @@ a img:hover {
 
 #name {
     font-weight: bold;
-    font-size: 3.5vw;
+    font-size: 40px;
 }
 
 #title {
-    font-size: 2.5vw;
+    font-size: 20px;
 }
 /*#endregion */
-
 
 /*#region Home*/
 #home {
@@ -227,24 +228,20 @@ a img:hover {
 .descpt {
     flex: 1;
 }
+
+/*#region Project GIFS */
+.project_imgs {
+    width: auto;
+    height: auto;
+}
+/*#endregion */
 /*#endregion */
 
+/*#region Contact */
 #contact {
     padding: 25px;
     width: 600px;
     margin: auto;
-}
-
-.line {
-    border-top: 3px solid rgb(14, 14, 41);
-    width: 200px;
-    margin: auto;
-    margin-top: 25px;
-}
-
-.shown {
-    opacity: 100%;
-    height: auto;
 }
 
 .input-block {
@@ -253,24 +250,41 @@ a img:hover {
     flex: 1;
 }
 
-.row {
-    display: flex;
-    gap: 15px; 
-}
 
 .contactform text {
     text-align: left;
     color: rgb(128, 126, 126)
 }
+/*#endregion */
 
-.footer {
+/*#region Custom Classes */
+.shown {
+    opacity: 100%;
+    height: auto;
+}
+
+.row {
+    display: flex;
+    gap: 15px; 
+}
+
+.line {
+    border-top: 3px solid rgb(14, 14, 41);
+    width: 200px;
+    margin: auto;
+    margin-top: 25px;
+}
+/*#endregion */
+
+/*#region Footer */
+#footer {
     padding: 20px;
     color: white;
     background-color: rgb(14, 14, 41);
     font-size: 10px;
 }
 
-.footer a:link, a:visited {
+#footer a:link, a:visited {
     color: #40aa5e;
 }
 
@@ -282,10 +296,24 @@ a img:hover {
     width: 100%;
     height: 25px;
 }
+/*#endregion */
 
 /*#region Small Resolution Style*/
 @media (max-width: 1000px)
 {
+    #header img {
+        width: 50px; 
+        height: 50px; 
+    }
+    
+    #name {
+        font-size: 20px;
+    }
+    
+    #title {
+        font-size: 12px;
+    }
+    /* hidding the nav bar if mobile */
     .nav {
         transition: 0s;
         font-size: 0px;
@@ -312,12 +340,15 @@ a img:hover {
         font-size: 30px;
     }
     #skills_p {
-        font-size: 30px;
+        font-size: 20px;
     }
-
     #contact {
         width: auto;
         padding: 0px;
+    }
+    .project_imgs {
+        width: 100%;
+        height: auto;
     }
 }
 /*#endregion */

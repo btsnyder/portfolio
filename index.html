@@ -22,10 +22,10 @@
             <p id="skills_p">C#</p>
         </div>
         <div id="menu">
-            <div onclick="location.href='#header';" class="nav active" id="homenav">HOME</div>
-            <div onclick="location.href='#projects';" class="nav" id="projectnav">PROJECTS</div>
-            <div onclick="location.href='#contact';" class="nav" id="contactnav">CONTACT</div>
-            <div onclick="location.href='#resume';" class="nav" id="resumenav">RESUME</div>
+            <div onclick="goToLocation('#header')" class="nav active" id="homenav">HOME</div>
+            <div onclick="goToLocation('#projects')" class="nav" id="projectnav">PROJECTS</div>
+            <div onclick="goToLocation('#contact')" class="nav" id="contactnav">CONTACT</div>
+            <div onclick="goToLocation('#resume')" class="nav" id="resumenav">RESUME</div>
         </div>
         <div class="content">
             <div id="projects">
@@ -69,34 +69,36 @@
                     <p>
                         The methodology of scaling a log is a complicated process, but essentially log scalers enter information about the log, 
                         like length and diameter. This information is then used to determine how much of the log can be used. It was our job to create 
-                        an application that could calculate this data in real time and store it in an efficient manner. We deployed this as a Universal 
-                        Windows Platform application so that it would be accessible with the hardware they would need. I was responsible for building the 
+                        an application that could calculate this data in real time and store it in an efficient manner. We deployed this as a <strong>Universal 
+                        Windows Platform</strong> application so that it would be accessible with the hardware they would need. I was responsible for building the 
                         UI for this application, debugging any issues, developing feature requests, and increasing performance. Since this was being used 
                         in a production environment, it was critical that I understood the issues users were experiencing and provide a timely solution.
                     </p>
+                    <img src="./media/TDSH.gif" alt="TDSH" class="project_imgs">
                     <h3>Storing the Data</h3>
                     <p>
-                        Since the information needed for log scaling can change drastically, we stored the data in a NoSQL database through Couchbase. 
-                        This would allow us to update schemas as needed while still handling large volumes of data. I was tasked with building, deploying, 
-                        and maintaining the database. Project owners would often have questions about data and it was my role to create the queries needed 
-                        to provide the answer. Queries were also required for any changes to our data model that required updates to historical data, which 
+                        Since the information needed for log scaling can change drastically, we stored the data in a <strong>NoSQL</strong> database through 
+                        Couchbase. This would allow us to update schemas as needed while still handling large volumes of data. I was tasked with building,
+                        deploying, and maintaining the database. Project owners would often have questions about data and it was my role to create the queries 
+                        needed to provide the answer. Queries were also required for any changes to our data model that required updates to historical data, which 
                         I was responsible for writing. 
                     </p>
                     <h3>Accessing the Data</h3>
                     <p>
                         Due to the nature of the production environment, we had to allow for offline entry of data that could then be synced later on. While 
                         Couchbase offers their Sync Gateway to handle this, we still had to implement our own merge strategies for data integrity. I took the 
-                        steps necessary to to deploy the Sync Gateway and make it available to all users. I did this through the Google Cloud Platform. To 
-                        keep the application secure, I integrated the Sync Gateway with Auth0. I diagnosed and worked through any issues that arose in our 
-                        syncing process.
+                        steps necessary to to deploy the Sync Gateway and make it available to all users. I did this through the <strong>Google Cloud Platform
+                        </strong>. To keep the application secure, I integrated the Sync Gateway with <strong>Auth0</strong>. I diagnosed and worked through 
+                        any issues that arose in our syncing process.
                     </p>
                     <h3>Organizing the Data</h3>
                     <p>
                         The information of the logs needed to be organized under different contracts, which required a separate application. This was built in 
-                        Xamarin Forms to allow for the most flexibility in our deployment environment. Similar to the log entry application, I was responsible 
-                        for building the UI for this application, debugging any issues, developing feature requests, and increasing performance. To track the 
-                        bugs and feature requests, I initiated our use of Jira to manage communication between the clients.
+                        <strong>Xamarin Forms</strong> to allow for the most flexibility in our deployment environment. Similar to the log entry application, 
+                        I was responsible for building the UI for this application, debugging any issues, developing feature requests, and increasing performance. 
+                        To track the bugs and feature requests, I initiated our use of <strong>Jira</strong> to manage communication between the clients.
                     </p>
+                    <img src="./media/FEMT.gif" alt="FEMT" class="project_imgs">
                     <h3>Testing the Data</h3>
                     <p>
                         The rules of log scaling have existed for quite some time. To ensure that our program followed those same standards, the auditing 
@@ -133,24 +135,24 @@
                         NVIDIA Jetson Nano to process our images and manage the user interface. Not to mention that this was all done 100% remotely, as 
                         the machine is located in California. While the troubleshooting involved with this process was rigorous, the satisfaction is worth 
                         the effort when you can see (through webcam) an arm move on a machine from a command line call.
-
                     </p>
                     <h3>Machine Vision</h3>
                     <p>
                         With the machine pieces working, it became important to capture saw teeth themselves. Using FLIR vision cameras, I created the 
-                        interface necessary to communicate with these cameras and get the images needed to find the appropriate data in Python. This has 
-                        given me a clear image (pun intended) of what a full cycle development process looks like. From an idea in someone’s head to real 
-                        images on a screen, I was a part of the entire process. We now continue to work on performance improvements, working with the end 
-                        users to create the most efficient machine we can.
+                        interface necessary to communicate with these cameras and get the images needed to find the appropriate data in <strong>Python
+                        </strong>. This has given me a clear image (pun intended) of what a full cycle development process looks like. From an idea in 
+                        someone’s head to real images on a screen, I was a part of the entire process. We now continue to work on performance improvements, 
+                        working with the end users to create the most efficient machine we can.
                     </p>
+                    <img src="./media/SawVision1.gif" alt="Saw Vision 1" class="project_imgs">
                     <h3>User Interface</h3>
                     <p>
                         To allow for users to interact with the machine and give the necessary data for our initial dataset, it was vital that we create a 
-                        user-friendly interface. To achieve this I used Python’s tkinter to create the interfaces. Being in the lumber industry, look was 
+                        user-friendly interface. To achieve this I used <strong>Python</strong>’s tkinter to create the interfaces. Being in the lumber industry, look was 
                         not as important to the user as functionality. It was my responsibility to discuss feature requests with the users. This included 
                         things like keyboard shortcuts and layout changes. 
-
                     </p>
+                    <img src="./media/SawVision2.gif" alt="Saw Vision 2" class="project_imgs">
                 </div>
             </div>
             <div id="toolbox_descpt" class="project_descpt">
@@ -158,6 +160,7 @@
                     <p class="resp_title">Responsibilities</p>
                     <ul class="resp_list">
                         <li>C#</li>
+                        <li>UWP</li>
                         <li>Auth0</li>
                         <li>XML</li>
                         <li>GitHub</li>
@@ -165,48 +168,29 @@
                 </div>
                 <div class="descpt">
                     <p>
-                        Our company was responsible for creating a Windows application that would create and manage data related to log scaling. 
-                        This required one application to be used for data entry of log information and another application to be used for managing 
-                        the contracts and locations of the truckloads of those logs.
+                        Due to new legislation, the way that lease schedules were calculated have changed. This can create a hassle for accountants when trying 
+                        to enter in new information. We teamed up with an accounting firm in Oregon to create an application that would walk accountants through 
+                        the process in a much friendlier way.
                     </p>
-                    <h3>Entering the Data</h3>
+
+                    <h3>Combining Knowledge</h3>
+                    
                     <p>
-                        The methodology of scaling a log is a complicated process, but essentially log scalers enter information about the log, 
-                        like length and diameter. This information is then used to determine how much of the log can be used. It was our job to create 
-                        an application that could calculate this data in real time and store it in an efficient manner. We deployed this as a Universal 
-                        Windows Platform application so that it would be accessible with the hardware they would need. I was responsible for building the 
-                        UI for this application, debugging any issues, developing feature requests, and increasing performance. Since this was being used 
-                        in a production environment, it was critical that I understood the issues users were experiencing and provide a timely solution.
+                        Thanks to my experiences on other projects, the development of this application went incredibly smooth. I was the sole developer for this 
+                        project, so I decided to stick with what I knew. I built a Universal Windows Platform application, along with Auth0 to handle our authentication 
+                        of the project. I was able to fully develop this application in a short amount of time due to my efficiency and drawing on previous knowledge. 
+                        One of my favorite things as a programmer is when the code just flows and on this project that was the case.
                     </p>
-                    <h3>Storing the Data</h3>
+                    <img src="./media/LeaseToolbox.gif" alt="Lease Toolbox" class="project_imgs">
+                    <h3>Learning New Things</h3>
+                    
                     <p>
-                        Since the information needed for log scaling can change drastically, we stored the data in a NoSQL database through Couchbase. 
-                        This would allow us to update schemas as needed while still handling large volumes of data. I was tasked with building, deploying, 
-                        and maintaining the database. Project owners would often have questions about data and it was my role to create the queries needed 
-                        to provide the answer. Queries were also required for any changes to our data model that required updates to historical data, which 
-                        I was responsible for writing. 
+                        The only thing that I had not experienced before was programming in XML. I had to create Excel worksheets from a UWP application, so it was 
+                        critical that I understand how to translate that information. I enjoy learning new things, a trait that helps immensely when programming, so 
+                        this was nothing too strenuous. It is always easier when there is good documentation on a topic. While in my earlier days, I tended to rely on 
+                        StackOverflow, I have thankfully learned that when you need reliable information it is best to go directly to the source.
                     </p>
-                    <h3>Accessing the Data</h3>
-                    <p>
-                        Due to the nature of the production environment, we had to allow for offline entry of data that could then be synced later on. While 
-                        Couchbase offers their Sync Gateway to handle this, we still had to implement our own merge strategies for data integrity. I took the 
-                        steps necessary to to deploy the Sync Gateway and make it available to all users. I did this through the Google Cloud Platform. To 
-                        keep the application secure, I integrated the Sync Gateway with Auth0. I diagnosed and worked through any issues that arose in our 
-                        syncing process.
-                    </p>
-                    <h3>Organizing the Data</h3>
-                    <p>
-                        The information of the logs needed to be organized under different contracts, which required a separate application. This was built in 
-                        Xamarin Forms to allow for the most flexibility in our deployment environment. Similar to the log entry application, I was responsible 
-                        for building the UI for this application, debugging any issues, developing feature requests, and increasing performance. To track the 
-                        bugs and feature requests, I initiated our use of Jira to manage communication between the clients.
-                    </p>
-                    <h3>Testing the Data</h3>
-                    <p>
-                        The rules of log scaling have existed for quite some time. To ensure that our program followed those same standards, the auditing 
-                        process for these applications had to be robust. I created and reported on unit tests involved with our calculations for log scaling 
-                        and for our own applications stability. 
-                    </p>
+                    
                 </div>
             </div>
             <div id="contact">
@@ -224,13 +208,13 @@
                     </div>
                     <div class="row">
                         <div class="input-block">
-                            <text>Message Subject</text>
+                            <text>Subject</text>
                             <input id="email_subject" type="text" class="form-control">
                          </div>
                     </div>
                     <div class="row">
                         <div class="input-block">
-                           <text>Message Body</text>
+                           <text>Body</text>
                             <textarea id="email_body" rows="3" type="text" class="form-control"></textarea>
                         </div>
                     </div>
@@ -240,7 +224,7 @@
                 <button id="resume" onclick="downloadResume()">Download</button>
             </div>
         </div>
-        <div class="footer">
+        <div id="footer">
             <a href="https://www.linkedin.com/in/brandon-snyder-02192b20b/" target="_blank">
                 <img src="./media/linkedin.png" alt="LinkedIn Logo" style="width:50px;height:50px;">
             </a>
